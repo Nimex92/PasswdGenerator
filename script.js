@@ -50,7 +50,7 @@ function generatePassword() {
         password += characterSet[randomIndex];
     }
 
-    console.log(password)
+    
    // Mostrar la contraseña generada
    document.getElementById('password').innerText = password;
 }
