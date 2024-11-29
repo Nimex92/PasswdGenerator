@@ -55,7 +55,18 @@ function generatePassword() {
    document.getElementById('password').innerText = password;
 }
 
+function onClickShake(){
+    var container = document.querySelector('.container');
+    container.classList.add('shake');
+
+    setTimeout(() => {
+        container.classList.remove('shake');
+    }, 400);
+
+}
+
 // Añadir el evento para generar la contraseña al hacer clic en el botón
 document.querySelector('.submit').addEventListener('click', generatePassword);
+document.querySelector('.submit').addEventListener('click', onClickShake);
 
 
