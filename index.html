@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Generator</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="src/input.css">
     <link rel="icon" type="image/x-icon" href="favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <main>
-        <section class="container">
-            <header>
-                <h1>My <span class="purple">Password</span> Generator</h1>
+    <main class="flex flex-col justify-center items-center">
+        <section class="container min-w-3xl max-w-6xl border rounded-xl shadow-xl flex flex-col justify-center">
+            <header class="w-full flex justify-center">
+                <h1 class="text-6xl mt-6 mb-12">My <span class="text-purple-800 font-bold italic">Password</span> Generator</h1>
             </header>
-            <article class="password-input-container w-100 flex j-center">
-                <p id="password" class="password-input pointer"></p>
-                <button class="copy-button md-button" onclick="copyToClipboard()"> <i class="fas fa-copy"></i></button>
+            <article class="password-input-container w-full flex justify-center">
+                <input id="password" class="password-input text-center cursor-pointer border rounded-lg w-3/4"></input>
+                <button class="copy-button md-button"> <i class="fas fa-copy"></i></button>
             </article>
-            <article class="mt-2 flex gap-2">
+            <article class="mt-6 gap-10 option-box flex justify-center">
                 <div class="md-checkbox"> 
                     <input type="checkbox" id="minus"> 
                     <label for="minus">MINUSCULAS</label>
@@ -35,20 +36,20 @@
                     <label for="symbols">SIMBOLOS</label>
                 </div>
             </article>
-            <article class="flex w-100 flex j-center column">
-                <div class="range-container flex gap-2 j-center">
+            <article class="w-full flex justify-center items-center">
+                <div class="range-container flex gap-2 justify-center items-center max-w-5xl">
                     <input type="range" id="password-length" min="8" max="254" value="12">
-                    <label for="password-length">Longitud: <span id="lengthValue">12</span></label>
+                    <input id="lengthValue" class="border max-w-12"/>
                 </div>
             </article>
-            <footer class="mt-3">
-                <button class="md-button submit">🔐 Generar</button>
+            <footer class="w-full mt-6 mb-4 flex justify-center">
+                <button class="md-button submit min-w-56 max-h-18">🔐 Generar</button>
             </footer>
         </section>
     </main>
 
     <!-- Incluye el CDN de Font Awesome para el icono de copiar --> 
      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-     <script src="script.js"></script>
+     <script src="./src/main.js"></script>
 </body>
 </html>
