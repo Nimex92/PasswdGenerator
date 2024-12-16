@@ -10,7 +10,7 @@
 </head>
 <body>
     <main class="flex flex-col justify-center items-center">
-        <section class="container min-w-3xl max-w-6xl border rounded-xl shadow-xl flex flex-col justify-center">
+        <section class="container min-w-3xl max-w-6xl border border-black/30 rounded-lg shadow-xl flex flex-col justify-center">
             <header class="w-full flex justify-center">
                 <h1 class="text-6xl mt-6 mb-12">My <span class="text-purple-800 font-bold italic">Password</span> Generator</h1>
             </header>
@@ -20,7 +20,7 @@
             </article>
             <article class="mt-6 gap-10 option-box flex justify-center">
                 <div class="md-checkbox"> 
-                    <input type="checkbox" id="minus"> 
+                    <input type="checkbox" id="minus" checked> 
                     <label for="minus">MINUSCULAS</label>
                 </div>
                 <div class="md-checkbox"> 
@@ -39,13 +39,19 @@
             <article class="w-full flex justify-center items-center">
                 <div class="range-container flex gap-2 justify-center items-center max-w-5xl">
                     <input type="range" id="password-length" min="8" max="254" value="12">
-                    <input id="lengthValue" class="border max-w-12"/>
+                    <input id="lengthValue" class="border max-w-12 text-center"/>
                 </div>
             </article>
-            <footer class="w-full mt-6 mb-4 flex justify-center">
-                <button class="md-button submit min-w-56 max-h-18">🔐 Generar</button>
+            <footer class="w-full mt-6 mb-4 flex justify-center gap-2">
+                <button class="md-button history bg-slate-500 hover:bg-slate-800/50 min-w-56 max-h-18 gap-1 flex justify-center items-center">📖 <span class="font-bold">Historial</span></button>
+                <button class="md-button submit min-w-56 max-h-18 gap-1 flex justify-center items-center">🔐 <span class="font-bold">Generar</span></button>
             </footer>
         </section>
+        <dialog id="history-dialog" class="min-w-48 max-h-96 h-auto bg-white rounded-xl">
+            <h1 class="text-5xl font-bold p-2">Historial de contraseñas generadas</h1>
+            <ul id="history-password-elements" class="flex flex-col justify-center items-center w-full"></ul>
+            <button id="close-history-dialog" class="mb-6 ml-72 bottom-0 md-button bg min-w-56 max-h-18 gap-1 flex justify-center items-center">Cerrar</button>
+        </dialog>
     </main>
 
     <!-- Incluye el CDN de Font Awesome para el icono de copiar --> 

@@ -1,5 +1,8 @@
 const rangeInput = document.getElementById('password-length'); 
 const textInput = document.getElementById('lengthValue');
+const historyBtn =  document.querySelector('.history');
+const historyDialog =  document.getElementById('history-dialog');
+var historyPasswordList = [];
 
 // Actualizar el valor del rango al mover el slider
 document.getElementById('password-length').addEventListener('input', function() {
@@ -58,9 +61,14 @@ function generatePassword() {
         password += characterSet[randomIndex];
     }
 
-    
-   // Mostrar la contraseña generada
-   document.getElementById('password').value = password;
+    if(historyPasswordList >= 10){
+        historyPasswordList.pop();
+        historyPasswordList.push(password)
+    } else {
+        historyPasswordList.push(password)
+    }
+    // Mostrar la contraseña generada
+    document.getElementById('password').value = password;
 }
 
 function onClickShake(){
@@ -91,4 +99,18 @@ document.getElementById('lengthValue').addEventListener('change', () =>{
         range.value = input.value;
         generatePassword();
 })
+document.getElementById('close-history-dialog').addEventListener('click', () => {
+    historyDialog.close();
+});
+
+historyBtn.addEventListener('click', () => {
+    var passwordList =  document.getElementById('history-password-elements');
+    passwordList.innerHTML = '';
+    historyPasswordList.forEach(x =>{
+        passwordList.innerHTML += '<li class="py-4 font-bold text-2xl">'+x+'</li>'
+    });
+    historyDialog.showModal()
+});
+
+
 
