@@ -29,8 +29,7 @@ function generatePassword() {
     const lowerCaseChars = 'abcdefghijklmnopqrstuvwxyz';
     const upperCaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const numberChars = '0123456789';
-    const symbolChars = '!@#$%^&*()-_=+[]{}|;:,.<>?';
-
+    const symbolChars = '!@#~~€¬=-+^';
     let characterSet = '';
     let passwordLength = document.getElementById('password-length').value; // Obtener la longitud desde el rango
 
@@ -111,6 +110,3 @@ historyBtn.addEventListener('click', () => {
     });
     historyDialog.showModal()
 });
-
-
-
