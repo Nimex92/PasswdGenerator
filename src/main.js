@@ -4,6 +4,11 @@ const historyBtn =  document.querySelector('.history');
 const historyDialog =  document.getElementById('history-dialog');
 var historyPasswordList = [];
 
+// Sucesos cuando cargue la ventana
+window.onload = () => {
+    textInput.value = "12"
+}
+
 // Actualizar el valor del rango al mover el slider
 document.getElementById('password-length').addEventListener('input', function() {
     const length = this.value;
