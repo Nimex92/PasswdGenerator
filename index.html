@@ -6,6 +6,8 @@
     <title>Password Generator</title>
     <link rel="stylesheet" href="src/input.css">
     <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
@@ -45,18 +47,31 @@
             <footer class="w-full mt-6 mb-4 flex justify-center gap-2">
                 <button class="md-button history bg-slate-500 hover:bg-slate-800/50 min-w-56 max-h-18 gap-1 flex justify-center items-center">📖 <span class="font-bold">Historial</span></button>
                 <button class="md-button submit min-w-56 max-h-18 gap-1 flex justify-center items-center">🔐 <span class="font-bold">Generar</span></button>
+
             </footer>
+        </section>
+        <section class=" min-w-3xl mt-12 max-w-6xl rounded-lg shadow-xl flex flex-col justify-center">
+            <article class="drop-area">
+                <input type="file" id="fileInput" class="file-input" accept=".xlsx, .xls">
+                <label for="fileInput" class="drop-area-label">
+                  <span class="material-icons">cloud_upload</span>
+                  <span>Arrastra el archivo aquí o pulsa</span>
+                </label>
+              </article>
         </section>
         <dialog id="history-dialog" class="min-w-48 max-h-96 h-auto bg-white rounded-xl">
             <h1 class="text-5xl font-bold p-2">Historial de contraseñas generadas</h1>
             <ul id="history-password-elements" class="flex flex-col justify-center items-center w-full"></ul>
             <button id="close-history-dialog" class="mb-6 ml-72 bottom-0 md-button bg min-w-56 max-h-18 gap-1 flex justify-center items-center">Cerrar</button>
         </dialog>
+        <dialog id="data-dialog" class="min-w-48 max-h-96 h-auto bg-white rounded-xl">
+
+        </dialog>
     </main>
 
     <!-- Incluye el CDN de Font Awesome para el icono de copiar --> 
      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-
      <script src="./src/main.js"></script>
+     <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
 </body>
 </html>
